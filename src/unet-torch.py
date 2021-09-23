@@ -370,7 +370,7 @@ def trainModelAction(action, model, out, devices):
     trainModel(model, opt, image_pairs, batch_size=32, device_adapter =  device_adapter)
 
 def getDeviceAdapter(visible_device_string):
-    if len(visible_device_string) == 0:
+    if visible_device_string is None or len(visible_device_string) == 0:
         return CpuAdapter()
     else:
         #find number of devices and return 
